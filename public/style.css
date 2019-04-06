@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #FAFAFA;
+}
+
+body {
+  background-color: #222326;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #999999;
+  font-size: 48px;
+  text-align: left;
+}
+
+.nav-wrapper {
+  height: 5em;
+  padding: 1.5em;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+}
