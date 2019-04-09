@@ -2,12 +2,16 @@ import types from './search.types';
 import _ from 'lodash';
 
 const initialState = {
+  token: '',
+  auth: {},
   album: {},
+  browser: {},
   fields: {
     search: ''
   },
   lists: {
-    results: []
+    results: [],
+    recommendations: []
   }
 };
 
@@ -55,6 +59,22 @@ export default function search(state = initialState, action) {
       return resetLists(state, payload);
     case types.RESET_FIELDS:
       return resetFields(state, payload);
+    case types.SET_TOKEN:
+      return { ...state, token: payload.access_token, auth: payload };
+    case types.GET_RECOMMENDATIONS:
+      return {
+        ...state,
+        lists: { ...state.lists, recommendations: payload.categories.items }
+      };
+    case types.GET_ALBUMS:
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          albums: payload.albums.items,
+          tracks: payload.tracks.items
+        }
+      };
     default:
       return state;
   }

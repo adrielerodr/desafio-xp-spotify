@@ -74,7 +74,12 @@ function getClientEnvironment(publicUrl) {
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
-        PUBLIC_URL: publicUrl
+        PUBLIC_URL: publicUrl,
+        SPOTIFY_API: 'https://api.spotify.com/v1',
+        SPOTIFY_AUTH: 'https://accounts.spotify.com/api',
+        CLIENT_ID: '2320767426ea4829af70d1abb1e6bb7f',
+        CLIENT_SECRET: '734eaebadec34c749ab348215f19029a',
+        REDIRECT_URI: 'http://localhost:3000'
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
