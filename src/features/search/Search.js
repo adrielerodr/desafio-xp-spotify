@@ -17,7 +17,7 @@ class Search extends Component {
 
     if (hashParams.access_token) {
       this.props.actions.setToken(hashParams);
-      this.props.actions.getRecommendations(hashParams.access_token);
+      localStorage.setItem('token', JSON.stringify(hashParams));
     } else {
       window.location.href =
         'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';
@@ -40,21 +40,32 @@ class Search extends Component {
     this.props.actions.setField({ field, value: event.target.value });
   };
 
+  handleGetAlbum = id => {
+    this.props.history.push(`/album/${id}`);
+  };
+
   get handlers() {
     return {
-      setField: this.handleSetField
+      setField: this.handleSetField,
+      getAlbum: this.handleGetAlbum
     };
   }
 
   render() {
-    const { search: { fields, lists } } = this.props;
+    const { search: { fields, lists, album } } = this.props;
     return (
-      <SearchView fields={fields} lists={lists} handlers={this.handlers} />
+      <SearchView
+        lists={lists}
+        album={album}
+        fields={fields}
+        handlers={this.handlers}
+      />
     );
   }
 }
 
 Search.propTypes = {
+  history: PropTypes.object,
   search: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };

@@ -22,6 +22,11 @@ class SearchApi {
           resolve({ ...res.data });
         })
         .catch(err => {
+          if (err.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href =
+              'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';
+          }
           if (err.response && err.response.data)
             reject({ ...err.response.data });
 
@@ -34,7 +39,7 @@ class SearchApi {
     return new Promise((resolve, reject) => {
       const params = {
         q: search,
-        type: 'album,track'
+        type: 'album'
       };
       axios
         .get(`${process.env.SPOTIFY_API}/search`, {
@@ -51,6 +56,11 @@ class SearchApi {
           resolve({ ...res.data });
         })
         .catch(err => {
+          if (err.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href =
+              'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';
+          }
           if (err.response && err.response.data)
             reject({ ...err.response.data });
 

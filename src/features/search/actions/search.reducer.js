@@ -61,18 +61,17 @@ export default function search(state = initialState, action) {
       return resetFields(state, payload);
     case types.SET_TOKEN:
       return { ...state, token: payload.access_token, auth: payload };
-    case types.GET_RECOMMENDATIONS:
+    case `${types.GET_RECOMMENDATIONS}_FULFILLED`:
       return {
         ...state,
         lists: { ...state.lists, recommendations: payload.categories.items }
       };
-    case types.GET_ALBUMS:
+    case `${types.GET_ALBUMS}_FULFILLED`:
       return {
         ...state,
         lists: {
           ...state.lists,
-          albums: payload.albums.items,
-          tracks: payload.tracks.items
+          results: payload.albums.items
         }
       };
     default:
