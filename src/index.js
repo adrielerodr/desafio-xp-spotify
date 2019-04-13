@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MainCmp from '@/components/main/Main.cmp';
+import MainComponent from '@/components/main/Main';
 
 let appDiv = document.getElementById('react-app');
 
-ReactDOM.render(<MainCmp />, appDiv);
+ReactDOM.render(<MainComponent />, appDiv);

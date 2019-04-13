@@ -5,6 +5,25 @@ let { DefinePlugin, ProvidePlugin } = require('webpack');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let webpack = require('webpack');
 
+const GLOBALS = {
+	'process.env': {
+	  'NODE_ENV': JSON.stringify('development'),
+	  'PUBLIC_PATH': JSON.stringify('/'),
+	  'SPOTIFY_API': JSON.stringify('https://api.spotify.com/v1'),
+	  'SPOTIFY_AUTH': JSON.stringify('https://accounts.spotify.com/api'),
+	  'CLIENT_ID': JSON.stringify('2320767426ea4829af70d1abb1e6bb7f'),
+	  'CLIENT_SECRET': JSON.stringify('734eaebadec34c749ab348215f19029a'),
+	  'REDIRECT_URI': JSON.stringify('http://localhost:3000'),
+	}
+  };
+
+const PATHS = {
+	publicPath: '/',
+	dist: path.resolve(__dirname, './dist'),
+	appSrc: path.resolve(__dirname, './src'),
+	appNodeModules: path.resolve(__dirname, './node_modules')
+  };
+
 
 let defaultConfigName = 'dev';
 let config = process.env.NODE_ENV || defaultConfigName;
