@@ -12,13 +12,13 @@ class Album extends Component {
     actions.getAlbumById(match.params.id, token.access_token);
   }
 
-  handleSetField = field => event => {
-    this.props.actions.setField({ field, value: event.target.value });
+  handleRedirect = route => {
+    this.props.history.push(route);
   };
 
   get handlers() {
     return {
-      setField: this.handleSetField
+      redirect: this.handleRedirect
     };
   }
 
@@ -28,9 +28,10 @@ class Album extends Component {
       <AlbumView
         id={id}
         name={name}
-        image={images[1] || []}
-        artist={artists[0] || []}
+        image={images[1] || {}}
+        artist={artists[0] || {}}
         tracks={tracks.items}
+        handlers={this.handlers}
       />
     );
   }

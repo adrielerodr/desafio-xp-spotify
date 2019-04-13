@@ -7,9 +7,14 @@ const getMinutes = miliseconds => {
   return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 };
 
-const AlbumView = ({ id, name, artist, image, tracks }) => {
+const AlbumView = ({ id, name, artist, image, tracks, handlers }) => {
   return (
-    <div>
+    <React.Fragment>
+      <div>
+        <button type="button" onClick={() => handlers.redirect('/')}>
+          Voltar
+        </button>
+      </div>
       <div>
         <img
           src={image.url}
@@ -30,16 +35,17 @@ const AlbumView = ({ id, name, artist, image, tracks }) => {
             </div>
           ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
 AlbumView.propTypes = {
+  artist: PropTypes.object,
+  tracks: PropTypes.array,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  artist: PropTypes.object,
   image: PropTypes.object.isRequired,
-  tracks: PropTypes.array.isRequired
+  handlers: PropTypes.object.isRequired
 };
 
 export default AlbumView;

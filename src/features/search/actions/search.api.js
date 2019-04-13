@@ -56,7 +56,7 @@ class SearchApi {
           resolve({ ...res.data });
         })
         .catch(err => {
-          if (err.status === 401) {
+          if (err.response.status === 401) {
             localStorage.removeItem('token');
             window.location.href =
               'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';

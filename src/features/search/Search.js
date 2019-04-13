@@ -7,20 +7,26 @@ import SearchView from './views/Search.view';
 
 class Search extends Component {
   componentDidMount() {
-    let hashParams = {};
-    let e,
-      r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    while ((e = r.exec(q))) {
-      hashParams[e[1]] = decodeURIComponent(e[2]);
-    }
+    const token = JSON.parse(localStorage.getItem('token'));
 
-    if (hashParams.access_token) {
-      this.props.actions.setToken(hashParams);
-      localStorage.setItem('token', JSON.stringify(hashParams));
+    if (!token) {
+      let hashParams = {};
+      let e,
+        r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+      while ((e = r.exec(q))) {
+        hashParams[e[1]] = decodeURIComponent(e[2]);
+      }
+
+      if (hashParams.access_token) {
+        this.props.actions.setToken(hashParams);
+        localStorage.setItem('token', JSON.stringify(hashParams));
+      } else {
+        window.location.href =
+          'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';
+      }
     } else {
-      window.location.href =
-        'https://accounts.spotify.com/authorize?client_id=2320767426ea4829af70d1abb1e6bb7f&response_type=token&redirect_uri=http://localhost:3000';
+      this.props.actions.setToken(token.access_token);
     }
   }
 
