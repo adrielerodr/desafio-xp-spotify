@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 const ResultView = ({ id, name, artist, image, redirectAlbum }) => {
   return (
-    <a onClick={() => redirectAlbum(id)}>
+    <a onClick={() => redirectAlbum(id)} className="card">
       <img
         src={image.url}
         alt={name}
         height={image.height - 100}
         width={image.width - 100}
       />
-      <p className="name-album">{name}</p>
-      <p className="name-artist">{(artist || {}).name}</p>
+      <p>{name}</p>
+      <p className="text-grey">{(artist || {}).name}</p>
     </a>
   );
 };

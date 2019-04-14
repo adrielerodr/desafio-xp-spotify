@@ -1,10 +1,9 @@
 import types from './album.types';
 import AlbumApi from './album.api';
 
-export const setToken = token => dispatch =>
+export const resetAlbum = () => dispatch =>
   dispatch({
-    type: types.SET_TOKEN,
-    payload: token
+    type: types.RESET_ALBUM
   });
 
 export const getAlbumById = (id, token) => dispatch =>
