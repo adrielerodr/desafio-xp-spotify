@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 5px;
+}
+
 input {
   border: 0;
   width: 98%;
@@ -41,6 +45,18 @@ input::placeholder {
   text-align: left;
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
+}
+
+button {
+  border: none;
+  color: #FAFAFA;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background: transparent;
 }
 
 .container {
@@ -96,8 +112,84 @@ input::placeholder {
   margin: 10px;
   height: 300px;
   display: flex;
+  cursor: pointer;
   text-align: center;
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
+}
+
+.box-container {
+  width: 80%;
+}
+
+.box {
+  display: flex;
+  margin-bottom: 3em;
+  flex-direction: row;
+}
+
+.section-buttons {
+  padding: 0 2.5em;
+}
+
+.box-album {
+  width: 40%;
+  text-align: center;
+}
+
+.box-tracks {
+  width: 60%;
+}
+
+.track {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.track-name {
+  width: 90%;
+}
+
+@media only screen and (max-width: 900px) {
+  input {
+    border: 0;
+    width: 98%;
+    height: 35px;
+    padding: 10px;
+    font-size: 24px;
+    color: #FAFAFA;
+    font-weight: 700;
+    line-height: 17.5px;
+    text-align: start;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #999999;
+  }
+
+  input::placeholder {
+    color: #999999;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .section-buttons {
+    padding: 0;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-album {
+    width: 100%;
+    text-align: center;
+  }
+
+  .box-tracks {
+    width: 100%;
+  }
 }

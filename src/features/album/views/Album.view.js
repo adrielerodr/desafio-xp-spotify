@@ -9,33 +9,35 @@ const getMinutes = miliseconds => {
 
 const AlbumView = ({ id, name, artist, image, tracks, handlers }) => {
   return (
-    <React.Fragment>
-      <div>
+    <div className="box-container">
+      <div className="section-buttons">
         <button type="button" onClick={() => handlers.redirect('/')}>
-          Voltar
+          {'< Voltar'}
         </button>
       </div>
-      <div>
-        <img
-          src={image.url}
-          alt={name}
-          height={image.height}
-          width={image.width}
-        />
-        <p className="name-album">{name}</p>
-        <p className="name-artist">{(artist || {}).name}</p>
+      <div className="box">
+        <div className="box-album">
+          <img
+            src={image.url}
+            alt={name}
+            height={image.height}
+            width={image.width}
+          />
+          <p>{name}</p>
+          <p className="text-grey">{(artist || {}).name}</p>
+        </div>
+        <div className="box-tracks">
+          {tracks &&
+            tracks.map(t => (
+              <div className="track" key={t.id}>
+                <p className="text-grey">{t.track_number}.</p>
+                <p className="track-name">{t.name}</p>
+                <p className="text-grey">{getMinutes(t.duration_ms)}</p>
+              </div>
+            ))}
+        </div>
       </div>
-      <div>
-        {tracks &&
-          tracks.map(t => (
-            <div key={t.id}>
-              <p className="track-number">{t.track_number}</p>
-              <p className="track-name">{t.name}</p>
-              <p className="track-duration">{getMinutes(t.duration_ms)}</p>
-            </div>
-          ))}
-      </div>
-    </React.Fragment>
+    </div>
   );
 };
 

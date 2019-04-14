@@ -12,6 +12,11 @@ class Album extends Component {
     actions.getAlbumById(match.params.id, token.access_token);
   }
 
+  componentWillUnmount() {
+    const { actions } = this.props;
+    actions.resetAlbum();
+  }
+
   handleRedirect = route => {
     this.props.history.push(route);
   };
