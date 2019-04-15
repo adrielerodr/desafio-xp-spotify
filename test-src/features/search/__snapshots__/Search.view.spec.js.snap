@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search view test Should render proper html 1`] = `
+<div
+  className="view"
+>
+  <form
+    className="search-input"
+  >
+    <label>
+      Busque por artistas, álbuns ou músicas
+    </label>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Comece a escrever..."
+      type="text"
+      value="Mars"
+    />
+  </form>
+  <div
+    className="header-search"
+  >
+    <h3>
+      Resultados encontrados para "
+      Mars
+      "
+    </h3>
+  </div>
+  <div
+    className="results"
+  >
+    <a
+      className="card"
+      onClick={[Function]}
+    >
+      <img
+        alt="Doo-Wops & Hooligans"
+        height={198}
+        src="https://i.scdn.co/image/3d279adc8126da0e4b6f2247a6e1dbfbc559e1ac"
+        width={200}
+      />
+      <p>
+        Doo-Wops & Hooligans
+      </p>
+      <p
+        className="text-grey"
+      >
+        Bruno Mars
+      </p>
+    </a>
+    <a
+      className="card"
+      onClick={[Function]}
+    >
+      <img
+        alt="24K Magic"
+        height={200}
+        src="https://i.scdn.co/image/63ddbd647a5a4e672da6b6eb29cfc38c985bffca"
+        width={200}
+      />
+      <p>
+        24K Magic
+      </p>
+      <p
+        className="text-grey"
+      >
+        Bruno Mars
+      </p>
+    </a>
+    <a
+      className="card"
+      onClick={[Function]}
+    >
+      <img
+        alt="Unorthodox Jukebox"
+        height={200}
+        src="https://i.scdn.co/image/e404a30a9e9a449e1f30156940fb0af63e45a42e"
+        width={200}
+      />
+      <p>
+        Unorthodox Jukebox
+      </p>
+      <p
+        className="text-grey"
+      >
+        Bruno Mars
+      </p>
+    </a>
+  </div>
+</div>
+`;

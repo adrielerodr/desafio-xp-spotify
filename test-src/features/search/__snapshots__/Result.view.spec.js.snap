@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result view test Should render proper html 1`] = `
+<a
+  className="card"
+  onClick={[Function]}
+>
+  <img
+    alt="Doo-Wops & Hooligans"
+    height={198}
+    src="https://i.scdn.co/image/3d279adc8126da0e4b6f2247a6e1dbfbc559e1ac"
+    width={200}
+  />
+  <p>
+    Doo-Wops & Hooligans
+  </p>
+  <p
+    className="text-grey"
+  >
+    Bruno Mars
+  </p>
+</a>
+`;

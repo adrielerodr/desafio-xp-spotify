@@ -109,9 +109,8 @@ module.exports = {
 	],
 	resolve: {
 		alias: {
-			'IndexModule': path.resolve(__dirname, './src/js/components/features/index'),
-			'CommonModule': path.resolve(__dirname, './src/js/components/common'),
 			'SearchModule': path.resolve(__dirname, './src/js/components/features/search'),
+			'AlbumModule': path.resolve(__dirname, './src/js/components/features/album'),
 		}
 	}
 };

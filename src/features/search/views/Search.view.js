@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ResultView from './Result.view';
 
-const SearchView = ({ fields, lists, handlers, album }) => {
+const SearchView = ({ fields, lists, handlers }) => {
   return (
     <div className="view">
       <form className="search-input">
@@ -46,7 +46,6 @@ const SearchView = ({ fields, lists, handlers, album }) => {
 };
 
 SearchView.propTypes = {
-  album: PropTypes.object,
   lists: PropTypes.object.isRequired,
   fields: PropTypes.object.isRequired,
   handlers: PropTypes.object.isRequired
