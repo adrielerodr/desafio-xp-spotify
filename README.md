@@ -4,7 +4,16 @@ Front-end Challenge (https://github.com/grupo-xp/challenge/blob/master/react/REA
 
 **To run the code locally:**
 ```
-npm install
-npm start
+yarn install
+yarn start
 visit http://localhost:3000
+```
+**To test:**
+In console
+```
+yarn json-api
+```
+and in the second console
+```
+yarn test
 ```
