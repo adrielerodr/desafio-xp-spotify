@@ -9,11 +9,6 @@ yarn start
 visit http://localhost:3000
 ```
 **To test:**
-In console
-```
-yarn json-api
-```
-and in the second console
 ```
 yarn test
 ```
