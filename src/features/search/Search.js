@@ -58,14 +58,9 @@ class Search extends Component {
   }
 
   render() {
-    const { search: { fields, lists, album } } = this.props;
+    const { search: { fields, lists } } = this.props;
     return (
-      <SearchView
-        lists={lists}
-        album={album}
-        fields={fields}
-        handlers={this.handlers}
-      />
+      <SearchView lists={lists} fields={fields} handlers={this.handlers} />
     );
   }
 }
