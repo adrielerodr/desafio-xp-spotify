@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "history": "^4.9.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
